@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="registro-ejb-light" default="deploy_registro_ejb_light">
+	<property name="build" location="bin" />
+	<property name="dist" location="dist" />
+	<property name="jboss_todos" location="/usr/local/jboss5.1/server/todos/deploy" />
+
+
+	<target name="deploy_registro_ejb_light" description="deploy del registro en server comun" depends="build_registro_todos">
+		<copy todir="${jboss_todos}" file="${dist}/registro-light.jar" />
+	</target>
+
+	<target name="build_registro_todos" description="genera el jar del registro server comun">
+		<mkdir dir="${dist}" />
+		<jar destfile="${dist}/registro-light.jar" basedir="${build}" />
+	</target>
+
+
+</project>

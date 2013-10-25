@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+                                 http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+    <persistence-unit name="utils-mysql-ds" transaction-type="JTA"><!-- nombre que aparece en el persistence contex en el bean -->
+      <jta-data-source>java:utils-mysql-ds</jta-data-source> <!-- este es el que esta dentro del jboss -->
+      
+	      <class>net.lacnic.domain.mysql.BlocosIP</class>
+	      <class>net.lacnic.domain.mysql.Designacoes</class>
+	      <class>net.lacnic.domain.mysql.Entidad</class>
+	      <class>net.lacnic.domain.mysql.AutonomousSystem</class> 
+	      <class>net.lacnic.domain.mysql.Usuario</class>
+	      <class>net.lacnic.domain.mysql.O3Cliente</class>
+	      <class>net.lacnic.domain.mysql.HostsReverso</class>
+	      <class>net.lacnic.domain.mysql.AutonomousSystemAllLACNIC</class>
+	      <class>net.lacnic.domain.mysql.BlocosIPArin</class>
+	      <class>net.lacnic.domain.mysql.EntidadArin</class>
+	      <class>net.lacnic.domain.mysql.UsuarioArin</class>
+	      <class>net.lacnic.domain.mysql.AutonomousSystemArin</class>
+	      <class>net.lacnic.domain.mysql.Delegacoes</class>
+		  <class>net.lacnic.domain.mysql.ReverseDs</class>
+		  <class>net.lacnic.domain.mysql.BlocosIPIANA</class>
+		<properties>
+	    	<property name="hibernate.archive.autodetection" value="hbm"/>
+	       	<property name="hibernate.show_sql" value="false"/>
+	        <property name="hibernate.format_sql" value="true"/>
+	        <!-- property name="hibernate.hbm2ddl.auto" value="update" /-->
+	        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+	     </properties>
+  </persistence-unit>
+</persistence>
